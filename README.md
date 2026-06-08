@@ -6,6 +6,10 @@ it is inspired heavily by Ubuntu 17.10/18.04 or GNOME 3.26/3.28 the difference i
 Will provide updates of progress when i can
 
 Current progress
-0.001%/100% 
+0.1/100%
+
+
 finished: the naming for it and as of now thats about it.
+
+
 Issues: None yet.
