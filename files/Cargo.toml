@@ -1,0 +1,11 @@
+[workspace]
+resolver = "3"
+default-members = ["files"]
+members = ["files"]
+
+[workspace.package]
+version = "0.0.1"
+edition = "2024"
+
+[workspace.dependencies]
+gtk4 = "0.11.3"
