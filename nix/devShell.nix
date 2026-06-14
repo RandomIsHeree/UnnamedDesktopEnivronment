@@ -1,4 +1,5 @@
 {
+  lib,
   mkShell,
   stdenv,
   nasm,
@@ -16,6 +17,7 @@
   flac,
   opus-tools,
   opus,
+  glib,
   pkg-config,
   inputs
 }:
@@ -26,7 +28,7 @@ let
     targets.wasm32-unknown-unknown.latest.rust-std
   ];
 in
-mkShell {
+mkShell (finalAttrs: {
   buildInputs = [
     nasm
     python3
@@ -53,4 +55,13 @@ mkShell {
     # Other deps
     gtk4
   ];
-}
+
+  runtimeLibs = lib.optionals stdenv.isLinux [
+    gtk4
+    glib
+  ];
+
+  shellHook = ''
+    export LD_LIBRARY_PATH=${lib.makeLibraryPath finalAttrs.runtimeLibs}
+  '';
+})
