@@ -8,7 +8,7 @@ it is inspired heavily by Ubuntu 17.10/18.04 or GNOME 3.26/3.28 the difference i
 Will provide updates of progress when i can
 
 Current progress
-0.7/100%
+0.9/100%
 
 
   finished: Nothing really, File Manager for it is being worked on though
@@ -19,4 +19,4 @@ as of June 10th the project will take longer as the fact that im (randomisheree)
 # DOCUMENTATION
 this is not gonna come out yet for like a while 
 
-I (randomisheree) WILL NOT UPLOAD FILES TO THIS REPOSITORY UNTIL ITS FINISHED ENOUGH THAT THE DE IS SOMEWHAT USABLE.
+We will NOT add files here due to the fact it would be a mess rather we will post it on an orginization thing on github and gitlab due to the fact it would be less of a mess then a mono repo
