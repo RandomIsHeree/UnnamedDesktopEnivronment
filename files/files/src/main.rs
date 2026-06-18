@@ -1,28 +1,42 @@
-use gtk::prelude::*;
-use gtk::{Application, ApplicationWindow, Button, glib};
-use gtk4 as gtk;
+use iced::{Element, Subscription, Task, Theme, widget::text};
 
-fn main() -> glib::ExitCode {
-    let application = Application::builder()
-        .application_id("com.example.FirstGtkApp")
-        .build();
+struct TheFiles {}
 
-    application.connect_activate(|app| {
-        let window = ApplicationWindow::builder()
-            .application(app)
-            .title("First GTK Program")
-            .default_width(350)
-            .default_height(70)
-            .build();
+#[derive(Debug, Clone)]
+enum Message {
+    Change,
+}
 
-        let button = Button::with_label("Click me!");
-        button.connect_clicked(|_| {
-            eprintln!("Clicked!");
-        });
-        window.set_child(Some(&button));
+impl TheFiles {
+    fn theme(&self) -> Theme {
+        Theme::Dracula
+    }
 
-        window.present();
-    });
+    fn subscription(&self) -> Subscription<Message> {
+        Subscription::none()
+    }
 
-    application.run()
+    fn update(&mut self, message: Message) -> Task<Message> {
+        match message {
+            _ => Task::none(),
+        }
+    }
+
+    fn view(&self) -> Element<'_, Message> {
+        text!("Hiya").into()
+    }
+
+    fn new() -> (Self, Task<Message>) {
+        // let (boot, task) = TheFiles::new();
+        let instance = TheFiles {};
+
+        (instance, Task::none())
+    }
+}
+
+fn main() -> iced::Result {
+    iced::application("The Files", TheFiles::update, TheFiles::view)
+        .theme(TheFiles::theme)
+        .subscription(TheFiles::subscription)
+        .run_with(TheFiles::new)
 }

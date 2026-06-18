@@ -8,4 +8,12 @@ version = "0.0.1"
 edition = "2024"
 
 [workspace.dependencies]
-gtk4 = "0.11.3"
+image = "0.25.10"
+
+[workspace.dependencies.tokio]
+version = "1.52.3"
+features = ["rt", "macros", "rt-multi-thread", "sync"]
+
+[workspace.dependencies.iced]
+version = "0.13.1"
+features = ["image", "tokio"]

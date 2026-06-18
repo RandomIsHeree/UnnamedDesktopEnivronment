@@ -19,6 +19,7 @@
   opus,
   glib,
   pkg-config,
+  godot,
   inputs
 }:
 let
@@ -39,6 +40,7 @@ mkShell (finalAttrs: {
     ninja
     curl
     jetbrains.idea 
+    godot
 
     rs-toolchain
   ];
